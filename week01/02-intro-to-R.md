@@ -274,12 +274,14 @@ instance:
 
 ``` r
 nums1 <- 1:100
-nums2 <- seq(-10, 100, by=5) # -10, -5, 0, ..., 100
-nums3 <- seq(-10, 100, length.out=467) # 467 equally spaced numbers between -10 and 100
+# -10, -5, 0, ..., 100
+nums2 <- seq(-10, 100, by = 5)
+# 467 equally spaced numbers between -10 and 100
+nums3 <- seq(-10, 100, length.out = 467)
 ```
 
 Notice that we used `seq` to generate both `nums1` and `nums2`. The
-different behavior is controlled by which arguments (e.g. `by`,
+different behavior is controlled by which arguments (e.g. `by`,
 `length.out`) are supplied to the function `seq`.
 
 With vectors we can carry out some of the most fundamental tasks in data
@@ -307,8 +309,8 @@ summary(verbal_scores)
 and plots.
 
 ``` r
-plot(x=math_scores, y=verbal_scores)
-text(x=math_scores, y=verbal_scores, labels=student_names)
+plot(x = math_scores, y = verbal_scores)
+text(x = math_scores, y = verbal_scores, labels = student_names)
 ```
 
 ![](02-intro-to-R_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
@@ -329,7 +331,7 @@ math_scores[1:3]
     ## [1] 80 75 91
 
 ``` r
-math_scores[-(4:5)]
+math_scores[-c(4:5)]
 ```
 
     ## [1] 80 75 91
@@ -383,7 +385,7 @@ variables:
 
 ``` r
 students$final_scores <- 0
-students$final_scores <- (students$math_scores + students$verbal_scores)/2
+students$final_scores <- (students$math_scores + students$verbal_scores) / 2
 
 age <- c(18, 19, 20, 21, 22)
 students2 <- data.frame(student_names, age)
@@ -421,8 +423,8 @@ list1
 or even vectors and data frames, or multiple data frames:
 
 ``` r
-schools <- list(school_name = "LSE", students = students, 
-                    faculty = data.frame(name = c("Kelly Jones", "Matt Smith"), 
+schools <- list(school_name = "LSE", students = students,
+                    faculty = data.frame(name = c("Kelly Jones", "Matt Smith"),
                                          age = c(41, 55)))
 schools
 ```
@@ -452,7 +454,7 @@ schools[[1]]
     ## [1] "LSE"
 
 ``` r
-schools[['faculty']]
+schools[["faculty"]]
 ```
 
     ##          name age
